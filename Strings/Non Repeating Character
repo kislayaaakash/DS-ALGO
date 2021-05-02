@@ -1,0 +1,13 @@
+//Function to find the first non-repeating character in a string.
+    nonrepeatingCharacter(s)
+    {
+        const countArray = new Array(256).fill(0);
+        for (var i =0; i < s.length; i++){
+            countArray[s.charCodeAt(i)]++;
+        }
+        for(var j=0; j <s.length; j++){
+            if(countArray[s.charCodeAt(j)] == 1)
+                return s[j];
+        }
+        return '$';
+    }
