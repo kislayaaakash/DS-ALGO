@@ -1,0 +1,17 @@
+//Function to check if a string is subsequence of other string.
+bool isSubSequence(string A, string B)
+    {
+        int i = 0;
+        int j =0;
+        while (j < B.length()){
+            if(A[i] == B[j]){
+                i++;
+                j++;
+            }
+            if(A[i] != B[j])
+                j++;
+            if(i >= A.length())
+                return true;
+        }
+        return false;
+    }
