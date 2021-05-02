@@ -1,0 +1,15 @@
+//Function to find repeated character whose first appearance is leftmost.
+    repeatedCharacter(s)
+    {
+        const countArray = new Array(256).fill(0);
+        if(s.length > 1){
+        for (var i =0; i < s.length; i++){
+            countArray[s.charCodeAt(i)]++;
+        }
+        for(var j =0; j < s.length; j++){
+            if(countArray[s.charCodeAt(j)] > 1)
+                return j;
+        }
+        }
+        return -1;
+    }
