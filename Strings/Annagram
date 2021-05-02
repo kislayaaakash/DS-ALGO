@@ -1,0 +1,17 @@
+//Function is to check whether two strings are anagram of each other or not.
+    isAnagram(a, b)
+    {
+    const countArr1 = new Array(256).fill(0);
+    const countArr2 = new Array(256).fill(0);
+    if (a.length != b.length)
+        return false
+    for(var i=0; i < a.length; i++){
+        countArr1[a.charCodeAt(i)]++;
+        countArr2[b.charCodeAt(i)]++;
+    }
+    for(var j=0; j < 256; j++){
+         if(countArr1[j] != countArr2[j])
+            return false;      
+    }
+    return true;
+    }
