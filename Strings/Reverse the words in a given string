@@ -1,0 +1,8 @@
+//Function to reverse words in a given string.
+    reverseWords(s)
+    {
+        s = s.split('.').reverse().join('.');
+       // s = s.reverse();
+       // s =s.join('.');
+        return s;
+    }
