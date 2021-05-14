@@ -1,6 +1,3 @@
-Problem Statement:
-    You are given an array arr(0-based index). The size of the array is given by sizeOfArray. You need to insert an element at given index and print the modified array.
-
 Solution : Method 1 ->
    insertAtIndex(arr,sizeOfArray,index,element){
         var temp = new Array(sizeOfArray);
