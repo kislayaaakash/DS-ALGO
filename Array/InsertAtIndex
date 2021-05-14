@@ -1,0 +1,42 @@
+Problem Statement:
+    You are given an array arr(0-based index). The size of the array is given by sizeOfArray. You need to insert an element at given index and print the modified array.
+
+Solution : Method 1 ->
+   insertAtIndex(arr,sizeOfArray,index,element){
+        var temp = new Array(sizeOfArray);
+        var j = 0;
+        for(var i = index; i < sizeOfArray-1; i++){
+            temp[j] = arr[i];
+            j++;
+        }
+        j =0;
+        arr[index] = element;
+        for(var k = index+1; k<sizeOfArray; k++){
+            arr[k] = temp[j];
+            j++;
+        }
+        return arr;
+   }
+   
+   Method 2->
+      insertAtIndex(arr,sizeOfArray,index,element){
+        var temp = new Array(sizeOfArray);
+        var j = 0;
+        for(var i = index; i < sizeOfArray-1; i++){
+            temp[j] = arr[i];
+            j++;
+        }
+        temp = temp.slice(0,j);
+        arr[index] = element;
+        arr = arr.slice(0,index+1);
+        arr = arr.concat(temp);   
+        return arr;
+}
+
+Method 3-> insertAtIndex(arr,index,element){
+    var arr1 = arr.slice(0,index + 1);
+    var arr2 = arr.slice(index+1,arr.length-1);
+    arr1.push(element);
+    arr = arr1.concat(arr2);
+    return arr;
+}
