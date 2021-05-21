@@ -1,0 +1,9 @@
+printNos(n){
+        
+        if(n==0)
+          return ;
+      else {
+          this.printNos(n-1);
+      }
+    console.log(n);
+    }
