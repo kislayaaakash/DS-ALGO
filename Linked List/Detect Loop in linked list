@@ -1,0 +1,13 @@
+//Function to check if the linked list has a loop.
+    detectLoop(head)
+    {
+        var map = new Map();
+        while(head){
+            if(map.has(head))
+                return 1;
+            else
+                map.set(head);
+            head = head.next
+        }
+        return 0;
+    }
