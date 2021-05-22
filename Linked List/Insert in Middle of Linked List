@@ -1,0 +1,20 @@
+//Function to insert a node in the middle of the linked list.
+    insertInMiddle(head, x)
+    {
+        var length =0;
+        var current = head;
+        while(current){
+            length++;
+            current = current.next;
+        }
+        var newNode = new Node(x);
+        var current = head;
+        var temp = current.next
+        for(var i =1; i < length/2;i++){
+            current = current.next;
+            temp = current.next;
+        }
+        current.next = newNode;
+        newNode.next = temp;
+        return head;
+    }
