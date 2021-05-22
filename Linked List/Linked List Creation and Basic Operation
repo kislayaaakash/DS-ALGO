@@ -23,5 +23,23 @@ class SingleList{
             current.next = newNode;
         }
         this.size++;
-   }         
+   }     
+   pop(){
+	
+    if(this.head == null)
+        return "empty list";
+    else if(this.size == 1){
+    	this.head = null;
+    	this.size--;
+    }
+    else{
+    	var current = this.head;
+    	for(var i =1; i < this.size -1 ; i++){
+    		current = current.next;
+    	}
+    	current.next = null;
+    	current = null;
+    	this.size--;
+    }
+}
 }
