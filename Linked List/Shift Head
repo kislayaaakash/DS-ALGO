@@ -1,0 +1,10 @@
+shiftHead(){
+	if(!this.head)
+	    return "empty list";
+	else{
+		var current = this.head;
+		this.head = current.next;
+		current = null;
+		this.size--;
+	}
+}
