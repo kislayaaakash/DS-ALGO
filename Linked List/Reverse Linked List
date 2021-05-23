@@ -1,0 +1,14 @@
+ //Function to reverse a linked list.
+    reverseList(head)
+    {
+        var current = head;
+        var prev= null;
+        var next = current.next;
+        while(current){
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
