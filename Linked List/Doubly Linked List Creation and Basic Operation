@@ -1,0 +1,25 @@
+class Node{
+    constructor(val){
+        this.next = null;
+        this.prev = null;
+        this.value = val;
+    }
+}
+
+class DoblyLinkedList{
+    constructor(){
+        this.head = null;
+        this.size = 0;
+    }
+
+    pushAtFront(val){
+        var newNode = new Node(val);
+        newNode.next = this.head;
+        newNode.prev = null;
+        if(this.head != null)
+            this.head.prev = newNode;
+        this.head = newNode;
+        this.size++;
+    }
+
+}
