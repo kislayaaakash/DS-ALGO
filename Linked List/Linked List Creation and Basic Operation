@@ -23,7 +23,16 @@ class SingleList{
             current.next = newNode;
         }
         this.size++;
-   }     
+   } 
+   //function to del the head
+   delHead(){
+	if(!this.head)
+	    return "empty list";
+	else{
+		this.head= this.head.next;
+	this.size--;
+	}
+   }
    pop(){
 	
     if(this.head == null)
