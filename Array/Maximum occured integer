@@ -1,0 +1,23 @@
+ //Function to find the maximum occurred integer in all ranges. (Simple Solution) 
+    maxOccured(L, R, n, maxx)
+    {
+        var myMap = new Map();
+        var minL = L[0];
+        var maxR = R[n-1];
+        var max = -1;
+        for(var i =0; i<L.length;i++){
+            var l = L[i];
+            var r = R[i];
+            for(var j =l; j <= r;j++){
+                if(myMap[j])
+                    myMap[j]++;
+                else
+                    myMap[j] = 1;
+            }
+        }
+        for(var k =minL; k < maxR; k++){
+            if(max < myMap[k])
+                max = myMap[k];
+        }
+        return max;
+    }
