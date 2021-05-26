@@ -1,0 +1,28 @@
+ //Function to insert a new node at given position in doubly linked list.
+    addNode(head, pos, data)
+    {
+        var newNode = new Node(data);
+        var nextNode = head.next;
+        if(pos == 0){
+            newNode.next = nextNode;
+            newNode.prev = head;
+            head.next = newNode;
+            if(nextNode != null)
+                nextNode.prev = newNode;
+        }
+        else{
+            var current = head;
+            nextNode = current.next;
+            for(var i =0; i < pos; i++)
+            {
+                current = current.next;
+                nextNode = current.next;
+            }
+            newNode.next = nextNode ;
+            newNode.prev = current;
+            current.next = newNode;
+            if(nextNode != null)
+                nextNode.prev = newNode;
+        }
+        
+    }
