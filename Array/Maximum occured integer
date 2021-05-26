@@ -15,9 +15,12 @@
                     myMap[j] = 1;
             }
         }
+        var max_int = -1;
         for(var k =minL; k < maxR; k++){
-            if(max < myMap[k])
+            if(max < myMap[k]){
                 max = myMap[k];
+                max_int = k;
+            }
         }
-        return max;
+        return max_int;
     }
