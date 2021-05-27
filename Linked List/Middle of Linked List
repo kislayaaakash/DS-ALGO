@@ -1,0 +1,14 @@
+getMiddle(node)
+    {
+        if(!node)
+            return -1;
+        else{
+            var slow = node;
+            var fast = node;
+            while(fast != null && fast.next != null){
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+            return slow.data;
+        }
+    }
