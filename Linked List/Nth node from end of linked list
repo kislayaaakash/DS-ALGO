@@ -1,0 +1,23 @@
+//Function to find the data of nth node from the end of a linked list
+    getNthFromLast(head, n)
+    {
+        var cur = head;
+        var prev = null;
+        var next = cur.next;
+        while(cur != null)
+        {
+            next = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = next;
+        }
+        head = prev;
+        cur = head;
+        for(var i = 1; i <n;i++){
+            if(cur.next == null)
+                return -1;
+            else
+                cur = cur.next;
+        }
+            return cur.data;
+    }
