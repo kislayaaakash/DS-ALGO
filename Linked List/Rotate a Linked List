@@ -1,0 +1,16 @@
+//Function to rotate a linked list.
+    rotate(head, k)
+    {
+        var cur = head;
+        while(k > 0){
+            var temp = cur.data;
+            while(cur.next != null){
+                cur.data = cur.next.data;
+                cur = cur.next;
+            }
+            cur.data = temp;
+            cur = head;
+            k--;
+        }
+        return head;
+    }
