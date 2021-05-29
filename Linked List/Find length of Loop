@@ -1,0 +1,30 @@
+//Function to find the length of a loop in the linked list.
+    countNodesinLoop(head)
+    {
+        var cur = head;
+        var mymap = new Map();
+        var loop_head = null;
+        while(cur){
+            if(mymap.has(cur)){
+                loop_head = cur;
+                break;
+            }
+            else
+                mymap.set(cur);
+            cur = cur.next;
+        }
+        if(loop_head == null)
+            return 0;
+        var counter = 0;
+        var temp = loop_head;
+        
+        while(loop_head){
+            counter++;
+            loop_head = loop_head.next;
+            if(loop_head == temp)
+                return counter;
+        }
+        return counter;
+    }
+    
+}
