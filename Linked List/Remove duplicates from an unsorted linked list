@@ -1,0 +1,19 @@
+//Function to remove duplicates from unsorted linked list.
+    removeDuplicates(head)
+    {
+        var mySet = new Set();
+        var cur = head;
+        var temp = head;
+        var x = null;
+        while(temp != null){
+            mySet.add(temp.data);
+            temp = temp.next;
+        }
+        for(var val of mySet){
+            cur.data = val;
+            var prev = cur;
+            cur = cur.next
+        }
+        prev.next = null;
+        return head;
+    }
