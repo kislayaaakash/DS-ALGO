@@ -1,0 +1,19 @@
+//Function to remove a loop in the linked list.
+    removeLoop(head)
+    {
+        var mymap = new Map();
+        var cur = head;
+        var prev = cur;
+        while(cur != null){
+            if(mymap.has(cur)){
+                prev.next = null;
+                return head;
+            }
+            else{
+                mymap.set(cur);
+            }
+            prev = cur;
+            cur = cur.next;
+        }
+        return 0;
+    }
