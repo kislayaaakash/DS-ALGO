@@ -1,0 +1,17 @@
+//Function to return the position of the first repeating element.
+    firstRepeated(arr, n)
+    {
+        var map = new Map();
+        for(var i =0; i < n ; i++){
+            if(map[arr[i]]){
+                map[arr[i]]++;
+            }
+            else
+                map[arr[i]] = 1;
+        }
+        for(var j =0; j < n ;j++){
+            if(map[arr[j]] >= 2)
+                return j+1;
+        }
+        return -1;
+    }
