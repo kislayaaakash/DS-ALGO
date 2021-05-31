@@ -1,0 +1,17 @@
+//Function to return the count of non-repeated elements in the array.
+    countNonRepeated(arr, n)
+    {
+        var mymap = new Map();
+        for(var i =0; i < n; i++){
+            if(mymap[arr[i]])
+                mymap[arr[i]]++;
+            else
+                mymap[arr[i]] = 1
+            }
+            var counter = 0;
+        for(var i =0; i < n; i++){
+            if(mymap[arr[i]] == 1)
+                counter++;
+        }
+        return counter;
+    }
