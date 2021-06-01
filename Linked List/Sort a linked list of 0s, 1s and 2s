@@ -1,0 +1,36 @@
+//Function to sort a linked list of 0s, 1s and 2s.
+    segregate(head)
+    {
+        var map = new Map();
+        var cur = head;
+        var n1 = 0;       // count number of nodes with data 0
+        var n2 = 0;       // count number of nodes with data 1
+        var n3 = 0;       // count number of nodes with data 2
+        while(cur){
+            if(cur.data == 0)
+                n1++;
+            else if(cur.data == 1)
+                n2++;
+            else 
+                n3++;
+            cur = cur.next;
+        }
+        var temp = head;
+        //iterate over first n1 node and set each node's data to 0
+        for(var i =1; i <= n1; i++){
+            temp.data = 0;
+            temp = temp.next;
+        }
+        //iterate over next n2 node and set each node's data to 1
+        for(i = 1; i <= n2; i++){
+            temp.data = 1;
+            temp = temp.next;
+        }
+        //iterate over next n3 node and set each node's data to 2
+         for(i = 1; i <= n3; i++){
+            temp.data = 2;
+            temp = temp.next;
+        }
+        return head;
+        
+    }
