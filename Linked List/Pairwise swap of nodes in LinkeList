@@ -1,0 +1,15 @@
+//Function to swap elements pairwise.
+    pairwise_swap(head)
+    {
+        var cur = head;
+        var cur_next = cur.next;
+        while(cur !== null && cur.next !== null){
+            var temp = cur.data;
+            cur.data = cur_next.data;
+            cur_next.data = temp;
+            cur = cur.next.next;
+            if(cur !== null && cur.next !== null)
+                cur_next = cur.next;
+        }
+        return head;
+    }
