@@ -20,7 +20,7 @@
             x_prev.next = y;
         }
         if(y_prev !== null){
-            y_prev.next = x;
+            y_prev.next = y;
         }
         
         var temp = x.next;
