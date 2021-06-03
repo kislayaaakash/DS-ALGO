@@ -1,0 +1,9 @@
+arrayReversal(arr,sizeOfArray) {
+     var len = sizeOfArray/2;
+      for(var i =0; i < len;i++){
+          var temp = arr[i];
+          arr[i] = arr[sizeOfArray - 1 -i];
+          arr[sizeOfArray - 1 -i] = temp;
+      }
+      return arr;
+  }
