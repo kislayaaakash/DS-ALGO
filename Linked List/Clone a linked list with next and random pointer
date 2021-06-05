@@ -1,0 +1,30 @@
+//Function to clone a linked list with next and random pointer.
+    copyList(head)
+    {
+        // insert copied nodes in between i.e copy of node 1 should be inserted between node1 and node2 and so on
+        var cur = head;
+        while(cur != null){
+            var newNode = new Node(cur.data);
+            newNode.next = cur.next;
+            cur.next = newNode;
+            cur = cur.next.next;
+        }
+        cur = head
+        while(cur != null){
+            if(cur.next != null)
+                cur.next.arb = cur.arb != null ? cur.arb.next : null;
+            cur = cur.next != null ? cur.next.next : null;
+        }
+        
+        var original = head;
+        var copy = original.next;
+        var temp = copy;
+        while(temp != null && original != null ){
+            original.next = original.next != null ? original.next.next : null;
+            temp.next = temp.next != null ? temp.next.next : null;
+            original = original.next;
+            temp =temp.next;
+            
+        }
+    
+     return copy;
