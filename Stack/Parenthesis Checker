@@ -1,0 +1,26 @@
+class Solution
+{
+    static boolean matching (char x , char y){
+        return ((x == '[' && y == ']') || 
+                (x == '(' && y == ')') ||
+                (x == '{' && y == '}') 
+        );
+    }
+    static boolean ispar(String str)
+    {
+        Deque<Character> s = new ArrayDeque<>();
+        for(int i =0; i < str.length(); i++){
+            char x = str.charAt(i);
+            if(x == '[' || x == '{' || x == '(')
+                s.push(x);
+            else{
+                if(s.isEmpty() == true)
+                    return false;
+                else if(matching(s.peek(),x) == false)
+                    return false;
+                else
+                    s.pop();
+            }
+        }return(s.isEmpty() == true);
+    }
+}
